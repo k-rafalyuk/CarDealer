@@ -15,6 +15,7 @@ public class ClientDao implements ClientDaoInterface <ClientEntity, Integer>{
     // При таком подходе эти переменные шарятся на все потоки и если два потока одновременно зайдут в объект ClientDao, 
     // и работать будет совсем не так, как задумывалось, а вернее, вообще работать не будет. Менеджить сессии и транзакции надо либо
     // в самих методах, которые априори потокобезопасны, либо поручить это самому hibernate
+    // Плюс транзакции очень желательно вынести на сервис слой
     private Session currentSession;
     private Transaction currentTransaction;
 
