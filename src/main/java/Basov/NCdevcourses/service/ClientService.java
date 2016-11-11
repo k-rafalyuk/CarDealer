@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// Не очень понятно, зачем тогда ClientInterface, если этим классом он все равно не имплементится
 @Service
 public class ClientService {
 
+    // Если мы автовайрим поле, объект будет инициализирован спрингом, соответственно, явно указывать = new ... не надо
     @Autowired
     ClientDao clientDao = new ClientDao();
 
